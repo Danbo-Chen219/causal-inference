@@ -6,7 +6,7 @@ This repository serves as a curated collection of notes and textbooks related to
 
 ## Repository Structure
 
-- **Causal Inference Note/** - Notes on causal inference concepts and methods
+- **Causal Inference Note/** - Notes on causal inference concepts and methods (incomplete) 
 - **Textbook or Paper/** - Collection of textbooks and academic papers:
   - *Book_causal-inference-for-statistics-social-and-biomedical-sciences/*
   - *Causal inference for statistics, social and biomedical sciences/*
