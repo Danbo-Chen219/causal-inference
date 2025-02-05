@@ -1,6 +1,6 @@
-# Causal-Inference-Note
-
 # Causal Inference Journey
+
+**A curated collection of notes and textbooks on causal inference.**
 
 ## Overview
 
