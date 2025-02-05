@@ -1,5 +1,3 @@
-# Causal-Inference-Note
-
 # Causal Inference Journey
 
 ## Overview
