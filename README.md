@@ -1,4 +1,4 @@
-# Causal Inference Journey
+# Causal Inference
 
 **A curated collection of notes and textbooks on causal inference.**
 
@@ -27,13 +27,13 @@ To use the resources in this repository:
 1. **Clone the repository**:
 
    ```sh
-   git clone https://github.com/Danbo-Chen219/causal-inference-journey.git
+   git clone https://github.com/Danbo-Chen219/causal-inference.git
    ```
 
 2. **Navigate to the folder**:
 
    ```sh
-   cd causal-inference-journey
+   cd causal-inference
    ```
 
 3. **Explore the notes and textbooks** in the respective directories.
