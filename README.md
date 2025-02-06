@@ -17,6 +17,7 @@ This repository serves as a curated collection of notes and textbooks related to
   - *Causal Inference in Python.pdf*
   - *Causal inference in statistics.pdf*
   - *Causal-Inference-the-Mixtape.pdf*
+  - *Useful Links: https://chabefer.github.io/STCI/Placebo.html
 - **README.md** - Repository description and usage guide
 
 ## Getting Started
