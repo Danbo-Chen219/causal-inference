@@ -1,4 +1,4 @@
-# Causal Inference Journey
+# Causal Inference
 
 **A curated collection of notes and textbooks on causal inference.**
 
@@ -17,6 +17,7 @@ This repository serves as a curated collection of notes and textbooks related to
   - *Causal Inference in Python.pdf*
   - *Causal inference in statistics.pdf*
   - *Causal-Inference-the-Mixtape.pdf*
+  - *Useful Links: https://chabefer.github.io/STCI/Placebo.html
 - **README.md** - Repository description and usage guide
 
 ## Getting Started
@@ -26,13 +27,13 @@ To use the resources in this repository:
 1. **Clone the repository**:
 
    ```sh
-   git clone https://github.com/Danbo-Chen219/causal-inference-journey.git
+   git clone https://github.com/Danbo-Chen219/causal-inference.git
    ```
 
 2. **Navigate to the folder**:
 
    ```sh
-   cd causal-inference-journey
+   cd causal-inference
    ```
 
 3. **Explore the notes and textbooks** in the respective directories.
