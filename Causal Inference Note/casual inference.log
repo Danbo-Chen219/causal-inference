@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2025.1.27)  4 FEB 2025 21:58
+This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2025.1.27)  18 FEB 2025 11:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -288,28 +288,19 @@ File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 
 [1
 
-]
-
-LaTeX Font Warning: Font shape `U/wasy/b/n' in size <7> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 76.
-
-
-LaTeX Font Warning: Font shape `U/wasy/b/n' in size <5> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 76.
-
-[2] (casual inference.aux)
+] [2] (casual inference.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3239 strings out of 409617
- 45562 string characters out of 5778276
+ 3233 strings out of 409617
+ 45676 string characters out of 5778276
  1929191 words of memory out of 5000000
- 25269 multiletter control sequences out of 15000+600000
- 569760 words of font info for 92 fonts, out of 8000000 for 9000
+ 25266 multiletter control sequences out of 15000+600000
+ 567726 words of font info for 87 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 57i,6n,65p,401b,228s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,9n,65p,401b,228s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on casual inference.pdf (2 pages).

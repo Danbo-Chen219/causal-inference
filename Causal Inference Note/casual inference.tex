@@ -58,44 +58,53 @@ The {\em Feynman kernel} is given by
 
 \end{itemize}
 
-\subsection{Mon, Sept 9: Review of Newtonian Mechanics}
+\section{PSM Model Setup}
+
+For an individual $i$, the outcome depends on whether they receive a certain treatment:
+\begin{equation}
+y_i =
+\begin{cases}
+y_{1i}, & \text{if } D_i = 1 \\
+y_{0i}, & \text{if } D_i = 0
+\end{cases}
+\end{equation}
 
 \begin{itemize}
-
-\item  A {\em Newtonian trajectory} ${\bf x}(t)$ ($t \in \R$) is given by solutions of the second order ODE
-\[ m\, \ddot{{\bf x}}(t) = {\bf F}({\bf x}(t)), \]
-where $m > 0$ is a basic parameter associated with a given Newtonian particle, called its {\em mass}.
-
-\item The force field ${\bf F}({\bf x})$ --- which we take to be static (i.e., not intrinsically dependent on time) for simplicity --- is said to be {\em conservative} if there is a {\em potential function} $V({\bf x})$ such that
-\[ {\bf F}({\bf x}) = -\nabla V({\bf x}). \]
-Here, `$\nabla$' denotes the {\em gradient operator}, 
-\[ \nabla V = \bigg( \frac{\partial V}{\partial x}, \, \frac{\partial V}{\partial y}, \, \frac{\partial V}{\partial z} \bigg). \]
-
-\item For a conservative force field, we can find a {\em conserved quantity} along the Newtonian trajectories, namely the {\em total mechanical energy}.
-\[ E = H({\bf x}, {\bf p}) := \frac{1}{2m}\, {\bf p}^2 + V({\bf x}). \]
-Here, ${\bf p}^2 := {\bf p} \Cdot {\bf p} = \| {\bf p} \|^2$, and ${\bf p} := m {\bf v} := m \dot{{\bf x}}$ is the {\em momentum}.
-
+    \item $D_i$ indicates whether individual $i$ receives the treatment, where $1$ represents treated, and $0$ represents untreated.
+    \item $y_{1i}$ represents the outcome for individual $i$ if treated.
+    \item $y_{0i}$ represents the outcome for individual $i$ if untreated.
 \end{itemize}
 
-\subsection{Tue, Sept 10: Alternative Formulations of Newtonian Mechanics}
+Given the observable covariates $x_i$, the probability of an individual $i$ receiving the treatment is defined as:
+\begin{equation}
+p(x_i) = \Pr(D_i = 1 \mid x = x_i) = E(D_i \mid x_i)
+\end{equation}
 
-\begin{itemize}
+Based on Equations (1) and (2), the **Average Treatment Effect on the Treated (ATT)** is given by:
+\begin{equation}
+ATT = E[y_{1i} - y_{0i} \mid D_i = 1]
+\end{equation}
+\begin{equation}
+= E[E[y_{1i} - y_{0i} \mid D_i = 1, p(x_i)]]
+\end{equation}
+\begin{equation}
+= E[E[y_{1i} \mid D_i = 1, p(x_i)] - E[y_{0i} \mid D_i = 0, p(x_i)] \mid D_i = 1]
+\end{equation}
 
-\item The {\bf Hamiltonian formulation}:
-\[ \dot{{\bf x}} = \frac{\partial H}{\partial {\bf p}}, \;\;\;\;\; \dot{{\bf p}} = - \frac{\partial H}{\partial {\bf x}}. \]
+\section{PSM Assumptions}
 
-\item The {\bf Lagrangian formulation}:
-\[ \delta S[{\bf x}(t)] = 0, \]
-where the {\em action} on the time interval $[t_a, t_b]$ is given by
-\[ S[{\bf x}(t)] := \int_{t_a}^{t_b} \bigg[ \frac{m}{2} \, \dot{{\bf x}}(t)^2 - V({\bf x}(t)) \bigg]  \; dt. \]
+\subsection{Common Support Assumption}
+For any possible value of $x_i$, the propensity score must satisfy:
+\begin{equation}
+0 < p(x_i) < 1
+\end{equation}
+This assumption ensures that there is **overlap between the treated and control groups**, making it possible to find comparable units.
 
-\item Etc.
-
-\end{itemize}
-
-
-\section{Spring 2020}
-
+\subsection{Balancing Assumption}
+\begin{equation}
+D_i \perp (y_{1i}, y_{0i}) \mid p(x_i)
+\end{equation}
+This assumption states that **conditional on the propensity score $p(x_i)$, treatment assignment is as good as random**. That is, for a given $p(x_i)$, there are no systematic differences between the treatment and control groups, meaning the treatment effect is entirely due to the treatment itself.
 
 
 \end{document}
