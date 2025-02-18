@@ -29,35 +29,6 @@
 
 \vspace{.25in}
 
-\section{Fall 2019}
-
-\subsection{Fri, Sept 6: Phenomenology of Microscopic Physics}
-
-\begin{itemize}
-
-\item Newtonian mechanics (i.e., ${\bf F} = m{\bf a}$) is an excellent theory; it applies to the vast majority of human-scale (and even interplanetary-scale) physics. 
-
-\item Apart from relativistic effects at very high velocities (special relativity) or in very strong gravitational fields (general relativity), Newtonian mechanics accurately describes a huge range of phenomena, but around the end of the Nineteenth Century people became aware of some physical effects for which there is no sensible Newtonian explanation.
-
-\item Examples include:
-\begin{itemize}
-\item the {\bf double slit experiment} (done with light by Thomas Young in 1801, and with electrons by Tonomura in 1986)
-\item the photoelectric effect (analyzed by Einstein in 1905 --- in fact his Nobel-winning work)
-\item the ``quantum Venn diagram'' puzzle, involving the overlaps of three polarizing filters
-\item the stability of the hydrogen atom (i.e., the fact that the electron doesn't lose energy and spiral inward toward the proton).
-\end{itemize}
-
-\begin{rem}
-How now, brown cow?
-\end{rem}
-
-\begin{defn}
-The {\em Feynman kernel} is given by
-\[ K(x_b, t_b; x_a, t_a) = \int_{x(t_a) = x_a}^{x(t_b) = x_b} e^{(i/\hbar) S[x(t)]} \; \mathcal{D}x(t). \]
-\end{defn}
-
-\end{itemize}
-
 \section{PSM Model Setup}
 
 For an individual $i$, the outcome depends on whether they receive a certain treatment:
@@ -91,7 +62,53 @@ ATT = E[y_{1i} - y_{0i} \mid D_i = 1]
 = E[E[y_{1i} \mid D_i = 1, p(x_i)] - E[y_{0i} \mid D_i = 0, p(x_i)] \mid D_i = 1]
 \end{equation}
 
-\section{PSM Assumptions}
+\subsection{Definition of ATE}
+The treatment effect is defined as a random variable:
+\begin{equation}
+y_{1i} - y_{0i}
+\end{equation}
+The expected value of this effect is called the **Average Treatment Effect (ATE)**:
+\begin{equation}
+ATE = E(y_{1i} - y_{0i})
+\end{equation}
+ATE represents the expected treatment effect for a randomly selected individual from the population, regardless of whether they received the treatment.
+
+\subsection{Definition of ATT}
+If we consider only those who actually participated in the treatment, we define the **Average Treatment Effect on the Treated (ATT)**:
+\begin{equation}
+ATT = E(y_{1i} - y_{0i} \mid D_i = 1)
+\end{equation}
+ATT measures the **average effect of the treatment for those who received it**. 
+
+\subsection{Importance of ATT vs. ATE}
+For policymakers, **ATT is often more important** because it directly measures the effect on those who received the intervention. However, ATE and ATT are generally **not equal**.
+
+\subsection{Estimation Challenges and Selection Bias}
+Since we cannot observe both $y_{0i}$ and $y_{1i}$ for the same individual, estimating ATE or ATT is challenging. A naive comparison between the treated and untreated groups results in selection bias:
+
+\begin{equation}
+E(y_{1i} \mid D_i = 1) - E(y_{0i} \mid D_i = 0)
+\end{equation}
+
+This difference consists of two terms:
+\begin{equation}
+E(y_{1i} \mid D_i = 1) - E(y_{0i} \mid D_i = 1) + E(y_{0i} \mid D_i = 1) - E(y_{0i} \mid D_i = 0)
+\end{equation}
+
+\begin{itemize}
+    \item The first term represents the **true ATT**:
+    \begin{equation}
+    ATT = E(y_{1i} \mid D_i = 1) - E(y_{0i} \mid D_i = 1)
+    \end{equation}
+    \item The second term represents **selection bias**:
+    \begin{equation}
+    E(y_{0i} \mid D_i = 1) - E(y_{0i} \mid D_i = 0)
+    \end{equation}
+\end{itemize}
+
+If selection bias is present, a direct comparison between treated and untreated individuals **does not accurately estimate ATT or ATE**.
+
+\subsection{PSM Assumptions}
 
 \subsection{Common Support Assumption}
 For any possible value of $x_i$, the propensity score must satisfy:
