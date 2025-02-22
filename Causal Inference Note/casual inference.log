@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2025.1.27)  18 FEB 2025 11:21
+This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2025.1.27)  18 FEB 2025 11:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -288,19 +288,19 @@ File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 
 [1
 
-] [2] (casual inference.aux)
+] [2] [3] (casual inference.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3218 strings out of 409617
- 45367 string characters out of 5778276
- 1929191 words of memory out of 5000000
- 25256 multiletter control sequences out of 15000+600000
+ 3222 strings out of 409617
+ 45485 string characters out of 5778276
+ 1930191 words of memory out of 5000000
+ 25260 multiletter control sequences out of 15000+600000
  566791 words of font info for 83 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 57i,9n,65p,326b,228s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,10n,65p,326b,228s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on casual inference.pdf (2 pages).
+Output written on casual inference.pdf (3 pages).

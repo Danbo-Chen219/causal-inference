@@ -123,5 +123,72 @@ D_i \perp (y_{1i}, y_{0i}) \mid p(x_i)
 \end{equation}
 This assumption states that **conditional on the propensity score $p(x_i)$, treatment assignment is as good as random**. That is, for a given $p(x_i)$, there are no systematic differences between the treatment and control groups, meaning the treatment effect is entirely due to the treatment itself.
 
+\textbf{1. Propensity Score Theorem}
+The theorem states that if treatment assignment satisfies:
+\begin{equation}
+(y_0, y_1) \perp D \mid x
+\end{equation}
+then it also holds that:
+\begin{equation}
+(y_0, y_1) \perp D \mid p(x)
+\end{equation}
+
+\textbf{Proof:} Since $D$ is a binary variable, we need to show that:
+\begin{equation}
+P(D=1 \mid y_0, y_1, p(x))
+\end{equation}
+is independent of $y_0, y_1$. Using the expectation rule:
+\begin{align*}
+P(D=1 \mid y_0, y_1, p(x)) &= E[D \mid y_0, y_1, p(x)] \\
+&= E_{y_0, y_1, x} [E(D \mid y_0, y_1, x) \mid y_0, y_1, p(x)] \quad \text{(by iterated expectation)} \\
+&= E_{y_0, y_1, x} [E(D \mid x) \mid y_0, y_1, p(x)] \quad \text{(by ignorability assumption)} \\
+&= E_{y_0, y_1, x} [p(x) \mid y_0, y_1, p(x)] \\
+&= p(x)
+\end{align*}
+Since the probability only depends on $p(x)$, this confirms that $(y_0, y_1) \perp D \mid p(x)$.
+
+\subsection{2. Overlap Assumption (Common Support)}
+To ensure valid matching, every possible value of $x$ should exist in both treatment and control groups. This is known as the \textbf{overlap assumption} or \textbf{matching assumption}.
+
+\textbf{Definition (Overlap Assumption):}
+\begin{equation}
+0 < p(x) < 1, \quad \forall x
+\end{equation}
+This ensures that there is a **common support** where treated and control groups have comparable observations.
+
+\textbf{Implications:}
+\begin{itemize}
+    \item Ensures that treated and control groups share a common range of propensity scores.
+    \item Helps avoid extrapolation in estimating treatment effects.
+    \item Also called the \textbf{matching assumption}.
+\end{itemize}
+
+\textbf{Graphical Representation (Figure 28.1):}  
+A graphical illustration shows the common support region, where both treated and control groups have overlapping propensity scores. Observations outside this range are often dropped to improve match quality.
+
+\subsection{3. Steps for Estimating Treatment Effects Using Propensity Score Matching}
+The general procedure for propensity score matching follows three steps:
+
+\begin{enumerate}
+    \item \textbf{Select Covariates $x_i$:}  
+    Include all relevant variables that influence both treatment assignment $D$ and potential outcomes $(y_0, y_1)$. This ensures the \textbf{ignorability assumption} holds.
+
+    \item \textbf{Estimate the Propensity Score $p(x)$:}  
+    \textbf{Rosenbaum and Rubin (1985)} suggest using a logit model:
+    \begin{equation}
+    p(x) = Pr(D=1 \mid x)
+    \end{equation}
+    Including higher-order terms and interactions improves matching quality.
+
+    \item \textbf{Perform Matching Based on $p(x)$:}  
+    If the model is correctly specified, the \textbf{covariate distributions should be similar} between treated and control groups post-matching.
+
+    \textbf{Data Balancing Check:}
+    \begin{equation}
+    \bar{x}_{\text{treat}} \approx \bar{x}_{\text{control}}
+    \end{equation}
+    Ensuring that the mean covariate values are similar across matched groups confirms that matching was successful.
+\end{enumerate}
+
 
 \end{document}
